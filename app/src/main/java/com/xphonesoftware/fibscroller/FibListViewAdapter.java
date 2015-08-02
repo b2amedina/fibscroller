@@ -67,6 +67,16 @@ public class FibListViewAdapter extends BaseAdapter implements ListAdapter {
         return true;
     }
 
+    /**
+     * Return the fib seq requested
+     *
+     * NOTE: this will cause data generation on the ui thread but since the
+     *       generator is optimized and does not do anything expensive
+     *       (e.g. disk access, etc.) it works well and simplifies things
+     *
+     * @param position - fib seq requested
+     * @return string for the fib's BigInteger
+     */
     @Override
     public Object getItem(int position) {
         if (position < mPageStart0) {
